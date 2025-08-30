@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SRM Campus Helper</title>
+  <link rel="stylesheet" href="navbar.css">
+  <style>
+    /* Main styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f1f1f1;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ff6600;
+      color: white;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    button.dark-toggle {
+      background: #ffffff33;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      width: 40px;
+      height: 40px;
+      line-height: 20px;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    button.dark-toggle:hover {
+      transform: scale(1.1);
+      background: #ffffff55;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+      color: black;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .dark-mode {
+      background: #000000;
+      color: #f1f1f1;
+    }
+
+    .dark-mode .card {
+      background: #333;
+      color: white;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .icon {
+      color: #ff6600;
+      margin-right: 5px;
+    }
+
+    #secret-card {
+      display: none;
+      background: gold;
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SRM Campus Helper</h1>
+    <button class="dark-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌓</button>
+    <nav>
+      <a href="#canteen-menu">Canteens</a>
+      <a href="#tech-buildings">Tech Buildings</a>
+      <a href="#girls-hostels">Girls Hostels</a>
+      <a href="#boys-hostels">Boys Hostels</a>
+      <a href="#clubs">Clubs</a>
+      <a href="#useful-links">Links</a>
+      <a href="#campus-map">Map</a>
+      <a href="#upcoming-events">Orientation Timer</a>
+    </nav>
+  </header>
+
+  <!-- Sections -->
+  <section id="upcoming-events">
+    <h3 style="padding:20px;"><span class="icon">⏳</span> Upcoming Event</h3>
+    <div class="grid">
+      <div class="card">
+        <h3>GFG Orientation</h3>
+        <p id="timer"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="clubs">
+    <h3 style="padding:20px;"><span class="icon">🎓</span> Clubs</h3>
+    <div class="grid">
+      <div class="card">Codenex</div>
+      <div class="card">GeeksforGeeks</div>
+      <div class="card">IEEE</div>
+      <div class="card">SRM Team Robocon</div>
+      <div class="card">ACM W</div>
+      <div class="card">ACM SigApp</div>
+      <div class="card">NCSS</div>
+      <div class="card">Aarush</div>
+      <div class="card">DSA</div>
+    </div>
+  </section>
+
+  <section id="girls-hostels">
+    <h3 style="padding:20px;"><span class="icon">🏠</span> Girls Hostels</h3>
+    <div class="grid">
+      <div class="card">Shenbegam</div>
+      <div class="card">M-Block</div>
+      <div class="card">Kalpana Chawala</div>
+      <div class="card">ESQ-A</div>
+      <div class="card">ESQ-B</div>
+      <div class="card">Mallagai</div>
+      <div class="card">Thallamai</div>
+    </div>
+  </section>
+
+  <section id="boys-hostels">
+    <h3 style="padding:20px;"><span class="icon">🏠</span> Boys Hostels</h3>
+    <div class="grid">
+      <div class="card">Adhyaman</div>
+      <div class="card">Oori</div>
+      <div class="card">Kaari</div>
+      <div class="card">Began Block</div>
+      <div class="card">N Block</div>
+    </div>
+  </section>
+
+  <section id="tech-buildings">
+    <h3 style="padding:20px;"><span class="icon">🏢</span> Tech Buildings</h3>
+    <div class="grid">
+      <div class="card"><img src="tp2.png.jpg"><p>TP2 (Library 1st floor, Study Room 2nd floor)</p></div>
+      <div class="card"><img src="ub.png.jpg"><p>UB</p></div>
+      <div class="card"><img src="tp.png.jpg"><p>TP</p></div>
+    </div>
+  </section>
+
+  <section id="canteen-menu">
+    <h3 style="padding:20px;"><span class="icon">🍴</span> Canteen Menu</h3>
+    <div class="grid">
+      <div class="card">Tea - ₹10</div>
+      <div class="card">Coffee - ₹15</div>
+      <div class="card">Samosa - ₹20</div>
+      <div class="card">Puff - ₹25</div>
+      <div class="card">Chips - ₹20</div>
+      <div class="card">Biscuits - ₹10</div>
+      <div class="card">Dosa - ₹40</div>
+      <div class="card">Idli - ₹30</div>
+      <div class="card">Juices - ₹35</div>
+      <div class="card">Cold Drinks - ₹30</div>
+    </div>
+  </section>
+
+  
+    <section id="Campus Map">
+  <h3 style="padding:20px;"><span class="icon">🗺</span> Campus Map</h3>
+  <div class="grid">
+    <div class="card">
+      <!-- Embedded interactive SRM KTR Campus map -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.911618195711!2d80.03917781590935!3d12.82314308126065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f76d4cecae21%3A0x4ffbf1222ec00611!2sS.R.M%20UNIVERSITY%20-%20K.T.R%20Campus!5e0!3m2!1sen!2sin!4v1693439876543!5m2!1sen!2sin"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+</section>
+
+  <section id="useful-links">
+    <h3 style="padding:20px;"><span class="icon">🔗</span> Useful Links</h3>
+    <div class="grid">
+      <div class="card"><a href="https://sp.srmist.edu.in/srmiststudentportal/students/loginManager/youLogin.jsp" target="_blank">Student Portal</a></div>
+      <div class="card"><a href="https://thehelpers.vercel.app/" target="_blank">Helper Website</a></div>
+      <div class="card"><a href="https://campusweb.vercel.app/student" target="_blank">Campus Web</a></div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <div class="card" id="secret-card">🎉 Surprise! Keep going, you’re doing amazing at SRM 🚀</div>
+  </div>
+
+  <footer>
+    <p>🤫 Hint: Try typing your campus initials...</p>
+
+<p>SRM CAMPUS HELPER @ 2025</p>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    // Countdown timer
+    var countDownDate = new Date("Sep 15, 2025 10:00:00").getTime();
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "Event Started!";
+      }
+    }, 1000);
+
+    // Secret card key sequence
+    const srmSequence = ['s','r','m'];  
+    let srmPosition = 0;
+    document.addEventListener('keydown', function(e) {
+      if (e.key.toLowerCase() === srmSequence[srmPosition]) {
+        srmPosition++;
+        if (srmPosition === srmSequence.length) {
+          document.getElementById("secret-card").style.display = "block";
+          srmPosition = 0; 
+        }
+      } else {
+        srmPosition = 0;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+/* navbar.css */
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background: white;
+  color: #ff6600;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

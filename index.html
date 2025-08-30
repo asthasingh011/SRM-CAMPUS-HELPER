@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SRM Campus Helper - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* dark gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
+    }
+    .login-card {
+      background: rgba(255, 255, 255, 0.1); /* glass effect */
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      text-align: center;
+      width: 300px;
+      animation: fadeIn 1s ease-in-out;
+      color: #fff;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+    input::placeholder {
+      color: #ddd;
+    }
+    button {
+      background: #ff9800; /* orange button */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+    button:hover {
+      transform: scale(1.05);
+      background: #e68900;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <h2>🔑 SRM Campus Helper</h2>
+    <input type="text" placeholder="Username" required>
+    <input type="password" placeholder="Password" required>
+    <br>
+    <button onclick="location.href='main.html'">Login</button>
+  </div>
+</body>
+</html>
